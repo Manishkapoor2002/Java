@@ -94,21 +94,21 @@ public class QnA7 {
 
 //        Leap year or normal year
 
-//        int year = scn.nextInt();
-//
-//        if(year%4 == 0){
-//            if(year%100 == 0){
-//               if(year%400 == 0){
-//                   System.out.println(year +" is a Leap year");
-//               }else{
-//                   System.out.println(year +" is Not a Leap year");
-//               }
-//            }else{
-//                System.out.println(year +" is a Leap year");
-//            }
-//        }else{
-//            System.out.println(year +" is Not a Leap year");
-//        }
+        int year = scn.nextInt();
+
+        if(year%4 == 0){
+            if(year%100 == 0){
+               if(year%400 == 0){
+                   System.out.println(year +" is a Leap year");
+               }else{
+                   System.out.println(year +" is Not a Leap year");
+               }
+            }else{
+                System.out.println(year +" is a Leap year");
+            }
+        }else{
+            System.out.println(year +" is Not a Leap year");
+        }
 
 
     }

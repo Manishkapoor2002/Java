@@ -21,21 +21,21 @@ public class QnA6{
 
 //        Question3
 //
-//        Scanner scn = new Scanner(System.in);
-//        float pencil = scn.nextFloat();
-//        float pen = scn.nextFloat();
-//        float eraser = scn.nextFloat();
-//
-//        float total = (pen + pencil + eraser);
-//
-//        float gst = (float) (total * 0.18);
-//
-//        float endbill = total + gst;
-//
-//        System.out.println("Pencil cost: $" +pencil);
-//        System.out.println("Pen cost: $" +pen);
-//        System.out.println("Eraser cost: $" +eraser);
-//        System.out.println("Total Bill: $" +total +" + $" +gst +" (18% Gst) = $" + endbill);
+        Scanner scn = new Scanner(System.in);
+        float pencil = scn.nextFloat();
+        float pen = scn.nextFloat();
+        float eraser = scn.nextFloat();
+
+        float total = (pen + pencil + eraser);
+
+        float gst = (float) (total * 0.18);
+
+        float endbill = total + gst;
+
+        System.out.println("Pencil cost: $" +pencil);
+        System.out.println("Pen cost: $" +pen);
+        System.out.println("Eraser cost: $" +eraser);
+        System.out.println("Total Bill: $" +total +" + $" +gst +" (18% Gst) = $" + endbill);
 
 //        Question 4
 
