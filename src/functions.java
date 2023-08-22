@@ -40,22 +40,49 @@ public class functions {
 
 
 //    Function to check Prime or not:
-    public static String CheckPrimeorNot(int num){
-        int count = 2;
+//    public static String CheckPrimeorNot(int num){
+//        int count = 2;
+//
+//        if (num == 2){
+//            return "Prime Number!";
+//        }
+//
+//        while(count<Math.sqrt(num)){
+//            if (num%count==0){
+//                return "Not a Prime";
+//            }
+//            count++;
+//        }
+//        return "Prime Number!";
+//
+//    }
 
-        if (num == 2){
-            return "Prime Number!";
+
+//    Function to generate all prime number from 2 to nth term
+
+    public static void Primelist(int num){
+        for(int i = 2;i<=num;i++){
+          boolean ans = checkPrime(i);
+          if(ans==true){
+              System.out.println(i);
+          }
         }
-
-        while(count<Math.sqrt(num)){
-            if (num%count==0){
-                return "Not a Prime";
-            }
-            count++;
-        }
-        return "Prime Number!";
-
     }
+
+    public static boolean checkPrime(int number) {
+        if (number==2){
+            return true;
+        }
+
+        for(int i = 2;i<=(Math.sqrt(number));i++){
+                if (number % i == 0) {
+                    return false;
+                }
+        }
+        return true;
+    }
+
+
     public static void main(String[] args) {
 //        Scanner scn = new Scanner(System.in);
 //        int n = scn.nextInt();
@@ -66,8 +93,9 @@ public class functions {
 //          System.out.println(sum(2,5,7));
 //          System.out.println(multiply(1,2));
 //          System.out.println(multiply(20.1f,14.1f));
-        int num = 12;
-        System.out.println( num +" Number is " +CheckPrimeorNot(num));
+//        int num = 12;
+//        System.out.println( num +" Number is " +CheckPrimeorNot(num));
+        Primelist(100);
 
     }
 
