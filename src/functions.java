@@ -21,33 +21,53 @@ public class functions {
 
 //Basic of Function Overloading:
 //    Function overloading using Parameters
-        public static int sum(int a, int b){
-            return a + b;
-        }
-
-        public static int sum(int a, int b, int c){
-            return a + b + c;
-        }
+//        public static int sum(int a, int b){
+//            return a + b;
+//        }
+//
+//        public static int sum(int a, int b, int c){
+//            return a + b + c;
+//        }
 //    Function overloading using Parameters
 //        Function overloading using Data Types
 
-    public static int multiply(int a, int b){
-        return a*b;
-    }
-    public static float multiply(float a, float b){
-        return a*b;
-    }
+//    public static int multiply(int a, int b){
+//        return a*b;
+//    }
+//    public static float multiply(float a, float b){
+//        return a*b;
+//    }
 
+
+//    Function to check Prime or not:
+    public static String CheckPrimeorNot(int num){
+        int count = 2;
+
+        if (num == 2){
+            return "Prime Number!";
+        }
+
+        while(count<Math.sqrt(num)){
+            if (num%count==0){
+                return "Not a Prime";
+            }
+            count++;
+        }
+        return "Prime Number!";
+
+    }
     public static void main(String[] args) {
 //        Scanner scn = new Scanner(System.in);
 //        int n = scn.nextInt();
 //        int r = scn.nextInt();
 //        long EndAnswer = Coefficient(n, r);
 //        System.out.println("Factorial of : " + n + " and " + r + " = " + EndAnswer);
-          System.out.println(sum(2,5));
-          System.out.println(sum(2,5,7));
-          System.out.println(multiply(1,2));
-          System.out.println(multiply(20.1f,14.1f));
+//          System.out.println(sum(2,5));
+//          System.out.println(sum(2,5,7));
+//          System.out.println(multiply(1,2));
+//          System.out.println(multiply(20.1f,14.1f));
+        int num = 12;
+        System.out.println( num +" Number is " +CheckPrimeorNot(num));
 
     }
 
