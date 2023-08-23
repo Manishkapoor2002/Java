@@ -8,11 +8,31 @@ public class FunctionQues {
 //    }
 
 //    Even or not
-    public static boolean isEven(int num){
-        if(num%2==0){
-            return true;
+//    public static boolean isEven(int num){
+//        if(num%2==0){
+//            return true;
+//        }
+//        return false;
+//    }
+
+
+//    Check for Palindrome
+
+    public static int ReverseNum(int num){
+        int Reverse =  0;
+        while(num>0){
+            Reverse = (Reverse * 10) + (num%10);
+            num = num / 10;
         }
-        return false;
+        return Reverse;
+    }
+    public static String PalindromeCheck(int number){
+        if (number == ReverseNum(number)){
+            return "Number is Palindrome.";
+        }else {
+            return "Number is Not Palindrome.";
+        }
+
     }
     public static void main(String args[]){
 //        Scanner scn = new Scanner(System.in);
@@ -26,7 +46,9 @@ public class FunctionQues {
 //        float ans = AVG(a,b,c);
 //        System.out.println(ans);
 
-        System.out.println(isEven(55));
+//        System.out.println(isEven(55));
+
+        System.out.println(PalindromeCheck(121212121));
 
     }
 }
