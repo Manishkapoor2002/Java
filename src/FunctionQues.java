@@ -18,22 +18,33 @@ public class FunctionQues {
 
 //    Check for Palindrome
 
-    public static int ReverseNum(int num){
-        int Reverse =  0;
-        while(num>0){
-            Reverse = (Reverse * 10) + (num%10);
-            num = num / 10;
-        }
-        return Reverse;
-    }
-    public static String PalindromeCheck(int number){
-        if (number == ReverseNum(number)){
-            return "Number is Palindrome.";
-        }else {
-            return "Number is Not Palindrome.";
-        }
+//    public static int ReverseNum(int num){
+//        int Reverse =  0;
+//        while(num>0){
+//            Reverse = (Reverse * 10) + (num%10);
+//            num = num / 10;
+//        }
+//        return Reverse;
+//    }
+//    public static String PalindromeCheck(int number){
+//        if (number == ReverseNum(number)){
+//            return "Number is Palindrome.";
+//        }else {
+//            return "Number is Not Palindrome.";
+//        }
+//
+//    }
 
+//    sum of all digits in a number:
+    public static int SumOfDigit(int Number){
+        int sum = 0;
+        while(Number>0){
+        sum = sum + (Number % 10);
+        Number /= 10;
+        }
+        return sum;
     }
+
     public static void main(String args[]){
 //        Scanner scn = new Scanner(System.in);
 //        System.out.print("Enter First Number: ");
@@ -48,7 +59,9 @@ public class FunctionQues {
 
 //        System.out.println(isEven(55));
 
-        System.out.println(PalindromeCheck(121212121));
+//        System.out.println(PalindromeCheck(121212121));
+
+        System.out.println("Sum of all digit : " +SumOfDigit(123456789));
 
     }
 }
