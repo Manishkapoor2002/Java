@@ -60,28 +60,43 @@ public class functions {
 
 //    Function to generate all prime number from 2 to nth term
 
-    public static void Primelist(int num){
-        for(int i = 2;i<=num;i++){
-          boolean ans = checkPrime(i);
-          if(ans==true){
-              System.out.println(i);
-          }
+//    public static void Primelist(int num){
+//        for(int i = 2;i<=num;i++){
+//          boolean ans = checkPrime(i);
+//          if(ans==true){
+//              System.out.println(i);
+//          }
+//        }
+//    }
+//
+//    public static boolean checkPrime(int number) {
+//        if (number==2){
+//            return true;
+//        }
+//
+//        for(int i = 2;i<=(Math.sqrt(number));i++){
+//                if (number % i == 0) {
+//                    return false;
+//                }
+//        }
+//        return true;
+//    }
+
+
+//    Binary to Decimal:
+    public static int BinaryToDecimal(int num){
+    int decimal = 0;
+        int i = 0;
+        while(num>0){
+            if(num%10==1){
+            decimal = decimal + (int)(1*Math.pow(2,i));
+            }
+            i++;
+            num = num/10;
         }
+
+        return decimal;
     }
-
-    public static boolean checkPrime(int number) {
-        if (number==2){
-            return true;
-        }
-
-        for(int i = 2;i<=(Math.sqrt(number));i++){
-                if (number % i == 0) {
-                    return false;
-                }
-        }
-        return true;
-    }
-
 
     public static void main(String[] args) {
 //        Scanner scn = new Scanner(System.in);
@@ -95,8 +110,10 @@ public class functions {
 //          System.out.println(multiply(20.1f,14.1f));
 //        int num = 12;
 //        System.out.println( num +" Number is " +CheckPrimeorNot(num));
-        Primelist(100);
+//        Primelist(100);
 
+        int Ans = BinaryToDecimal(1010101);
+        System.out.println(Ans);
     }
 
 }
