@@ -84,19 +84,33 @@ public class functions {
 
 
 //    Binary to Decimal:
-    public static int BinaryToDecimal(int num){
-    int decimal = 0;
-        int i = 0;
-        while(num>0){
-            if(num%10==1){
-            decimal = decimal + (int)(1*Math.pow(2,i));
-            }
-            i++;
-            num = num/10;
-        }
+//    public static int BinaryToDecimal(int num){
+//    int decimal = 0;
+//        int i = 0;
+//        while(num>0){
+//            if(num%10==1){
+//            decimal = decimal + (int)(1*Math.pow(2,i));
+//            }
+//            i++;
+//            num = num/10;
+//        }
+//
+//        return decimal;
+//    }
 
-        return decimal;
+//    Decimal to Binary:
+public static int DecimaltoBinary(int num){
+    int Binary = 0;
+    int i =0;
+
+    while(num>0){
+        Binary =  (Binary + (int)((num%2)*Math.pow(10,i)));
+        num = (num/2);
+        i++;
     }
+    return Binary;
+}
+
 
     public static void main(String[] args) {
 //        Scanner scn = new Scanner(System.in);
@@ -111,9 +125,9 @@ public class functions {
 //        int num = 12;
 //        System.out.println( num +" Number is " +CheckPrimeorNot(num));
 //        Primelist(100);
-
-        int Ans = BinaryToDecimal(1010101);
-        System.out.println(Ans);
+//        int Ans = BinaryToDecimal(1010101);
+//        System.out.println(Ans);
+        System.out.println(DecimaltoBinary(26));
     }
 
 }
