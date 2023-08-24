@@ -1,2 +1,1 @@
-# firstprogram
-Started Java.
+# Start learning Java
