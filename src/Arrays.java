@@ -96,19 +96,30 @@ public class Arrays {
 //
 //    }
 
-    public static void  ReversedArray(int[] OriginalArray){
-        int start = 0,last = OriginalArray.length-1;
+//    public static void  ReversedArray(int[] OriginalArray){
+//        int start = 0,last = OriginalArray.length-1;
+//
+//        while (start<last){
+//            int temp = OriginalArray[last];
+//            OriginalArray[last] = OriginalArray[start];
+//            OriginalArray[start] = temp;
+//            start++;
+//            last--;
+//        }
+//        System.out.println("Reversed Array");
+//        for (int i = 0;i<=OriginalArray.length-1;i++){
+//            System.out.print(OriginalArray[i] +" ");
+//        }
+//    }
 
-        while (start<last){
-            int temp = OriginalArray[last];
-            OriginalArray[last] = OriginalArray[start];
-            OriginalArray[start] = temp;
-            start++;
-            last--;
-        }
-        System.out.println("Reversed Array");
-        for (int i = 0;i<=OriginalArray.length-1;i++){
-            System.out.print(OriginalArray[i] +" ");
+//    Pair in an Array:
+    public static void pairInArray(int[] Original){
+        for (int i = 0;i<= Original.length-1;i++){
+
+            for (int j = i+1;j<= Original.length-1;j++){
+                System.out.print("("+Original[i] +","+Original[j]+") ");
+            }
+            System.out.println();
         }
     }
     public static void main(String[] args) {
@@ -154,10 +165,14 @@ public class Arrays {
 //        int key = 12;
 //        System.out.println("Key found at" +binarySearch(number, key));
 
-        int[] OriginalArray = {0,1,2,3,4,5};
+//        int[] OriginalArray = {0,1,2,3,4,5};
 //        System.out.println(OriginalArray[5]);
-        ReversedArray(OriginalArray);
+//        ReversedArray(OriginalArray);
 
+//        Pair of an Array:
+        int[] OriginalArray = {2,4,6,8,10};
+
+        pairInArray(OriginalArray);
 
 
 
