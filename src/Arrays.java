@@ -150,34 +150,67 @@ public class Arrays {
 //            System.out.println();
 //        }
 //    }
-       public static void maxSubArraySum(int[] Original){
-           int max = Integer.MIN_VALUE;
-           String maxedSubArray = "";
-           String currentSubArray = "";
-           int currentArraySum = 0;
+//       public static void maxSubArraySum(int[] Original){
+//           int max = Integer.MIN_VALUE;
+//           String maxedSubArray = "";
+//           String currentSubArray = "";
+//           int currentArraySum = 0;
+//        for (int i = 0;i<=Original.length-1;i++){
+//
+//            for (int j = i;j<= Original.length-1;j++){
+//
+//                for (int k = i;k<=j;k++){
+//                    currentArraySum += Original[k];
+//                    currentSubArray += Original[k];
+////                    System.out.print(Original[k] +" ");
+//                }
+//                if(max<currentArraySum){
+//                    max = currentArraySum;
+//                    maxedSubArray = currentSubArray;
+//                }
+//                currentArraySum = 0;
+//                currentSubArray = "";
+//
+//                System.out.println();
+//            }
+//            System.out.println();
+//        }
+//           System.out.println("Max SubArray: "+maxedSubArray);
+//           System.out.println("Sum of Max SubArray: "+max);
+//    }
+
+    public static void maxSubArraySum(int[] Original){
+        int max = Integer.MIN_VALUE;
+        int currentArraySum = 0;
+
+        int[] prefix = new int[Original.length];
+        prefix[0] = Original[0];
+
+        for (int i = 1;i<= prefix.length-1;i++){
+            prefix[i] = prefix[i-1] + Original[i];
+//            System.out.println(prefix[i]);
+        }
+
         for (int i = 0;i<=Original.length-1;i++){
 
             for (int j = i;j<= Original.length-1;j++){
 
-                for (int k = i;k<=j;k++){
-                    currentArraySum += Original[k];
-                    currentSubArray += Original[k];
-//                    System.out.print(Original[k] +" ");
-                }
-                if(max<currentArraySum){
-                    max = currentArraySum;
-                    maxedSubArray = currentSubArray;
-                }
-                currentArraySum = 0;
-                currentSubArray = "";
+                currentArraySum = i == 0 ? prefix[j]:prefix[j] - prefix[i-1];
 
-                System.out.println();
+                if (max<currentArraySum){
+                    max = currentArraySum;
+                }
+//                currentArraySum = 0;
             }
-            System.out.println();
         }
-           System.out.println("Max SubArray: "+maxedSubArray);
-           System.out.println("Sum of Max SubArray: "+max);
+        System.out.println(max);
+
     }
+
+
+
+//    Optimised Approach to find Max Value and Max SubString Sum of an Array by using Prefix sum approach
+
 
     public static void main(String[] args) {
 //        creating Array:
@@ -237,8 +270,6 @@ public class Arrays {
 // Max-SubArrays Sum:
         int[] OriginalArray = {1,2,-5,9,8,-6};
         maxSubArraySum(OriginalArray);
-
-
 
     }
 }
