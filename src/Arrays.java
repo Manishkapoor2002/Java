@@ -139,16 +139,44 @@ public class Arrays {
 //    }
 
 
-    public static void subArray(int[] Original){
+//    public static void subArray(int[] Original){
+//        for (int i = 0;i<=Original.length-1;i++){
+//            for (int j = i;j<= Original.length-1;j++){
+//                for (int k = i;k<=j;k++){
+//                    System.out.print(Original[k] +" ");
+//                }
+//                System.out.println();
+//            }
+//            System.out.println();
+//        }
+//    }
+       public static void maxSubArraySum(int[] Original){
+           int max = Integer.MIN_VALUE;
+           String maxedSubArray = "";
+           String currentSubArray = "";
+           int currentArraySum = 0;
         for (int i = 0;i<=Original.length-1;i++){
+
             for (int j = i;j<= Original.length-1;j++){
+
                 for (int k = i;k<=j;k++){
-                    System.out.print(Original[k] +" ");
+                    currentArraySum += Original[k];
+                    currentSubArray += Original[k];
+//                    System.out.print(Original[k] +" ");
                 }
+                if(max<currentArraySum){
+                    max = currentArraySum;
+                    maxedSubArray = currentSubArray;
+                }
+                currentArraySum = 0;
+                currentSubArray = "";
+
                 System.out.println();
             }
             System.out.println();
         }
+           System.out.println("Max SubArray: "+maxedSubArray);
+           System.out.println("Sum of Max SubArray: "+max);
     }
 
     public static void main(String[] args) {
@@ -203,9 +231,12 @@ public class Arrays {
 //        pairInArray(OriginalArray);
 
 //SubArrays of An Array:
-        int[] OriginalArray = {2,4,6,8,10};
-        subArray(OriginalArray);
+//        int[] OriginalArray = {2,4,6,8,10};
+//        subArray(OriginalArray);
 
+// Max-SubArrays Sum:
+        int[] OriginalArray = {1,2,-5,9,8,-6};
+        maxSubArraySum(OriginalArray);
 
 
 
