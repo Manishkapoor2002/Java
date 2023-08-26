@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.Scanner;
 
 public class Arrays {
@@ -47,28 +48,53 @@ public class Arrays {
 
 //    Binary Search:
 
-    public static int binarySearch(int number[], int key) {
-        int start = 0, end = number.length - 1;
+//    public static int binarySearch(int number[], int key) {
+//        int start = 0, end = number.length - 1;
+//
+//
+//        while (start <= end) {
+//            int mid = (start + end) / 2;
+//            System.out.println(mid);
+//
+//            if (number[mid] == key) {
+//                return mid;
+//            }
+//            if (number[mid] < key) {
+//                start = mid + 1;
+//            }else{
+//                end = mid - 1;
+//            }
+//
+//        }
+//        return -1;
+//    }
 
 
-        while (start <= end) {
-            int mid = (start + end) / 2;
-            System.out.println(mid);
+//    Reverse an Array:
 
-            if (number[mid] == key) {
-                return mid;
-            }
-            if (number[mid] < key) {
-                start = mid + 1;
-            }else{
-                end = mid - 1;
-            }
+    public static void ReversedArray(int OrignalArray[]){
+        int ReversedArray[] = new int[(OrignalArray.length)];
+        int count  = 0;
+        for (int i = OrignalArray.length-1;i>=0;i--){
+            ReversedArray[count] = OrignalArray[i];
+            count++;
+        }
+//        Print Original Array:
+        System.out.print("Original Array :");
+        for (int i = 0;i<= OrignalArray.length-1;i++){
+            System.out.print(OrignalArray[i] +" ,");
 
         }
-        return -1;
+
+        System.out.println();
+//        Print Reversed Array:
+
+        System.out.print("Reversed Array :");
+       for (int i = 0;i<= ReversedArray.length-1;i++){
+           System.out.print(" "+ReversedArray[i] +",");
+       }
+
     }
-
-
     public static void main(String args[]) {
 //        creating Array:
 //        DataType ArrayName[] = new DataType[Size of Array]
@@ -108,9 +134,17 @@ public class Arrays {
 //        System.out.println("Smallest Rank among all :" +SmallestVal(Rank));
 
 //        Binary Search:
-        int number[] = {2,4,6,8,10,12,14,16,18,20};
-        int key = 12;
-        System.out.println("Key found at" +binarySearch(number, key));
+//        int number[] = {2,4,6,8,10,12,14,16,18,20};
+//        int key = 12;
+//        System.out.println("Key found at" +binarySearch(number, key));
+
+        int[] OrignalArray = {0,1,2,3,4,5};
+//        System.out.println(OrignalArray[5]);
+        ReversedArray(OrignalArray);
+
+
+
+
 
 
     }
