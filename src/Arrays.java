@@ -113,15 +113,44 @@ public class Arrays {
 //    }
 
 //    Pair in an Array:
-    public static void pairInArray(int[] Original){
-        for (int i = 0;i<= Original.length-1;i++){
+//    public static void pairInArray(int[] Original){
+//        for (int i = 0;i<= Original.length-1;i++){
+//
+//            for (int j = i+1;j<= Original.length-1;j++){
+//                System.out.print("("+Original[i] +","+Original[j]+") ");
+//            }
+//            System.out.println();
+//        }
+//    }
 
-            for (int j = i+1;j<= Original.length-1;j++){
-                System.out.print("("+Original[i] +","+Original[j]+") ");
+
+//    SubArrays of An Array:
+//    public static void subArray(int[] Original){
+//        for (int i = 0;i<= Original.length-1;i++){
+//            String SubArray = "";
+//            SubArray += Original[i];
+//            System.out.print("(" +SubArray +") ");
+//            for (int j = i+1;j<= Original.length-1;j++){
+//                SubArray += Original[j];
+//                System.out.print("(" +SubArray +") ");
+//            }
+//            System.out.println();
+//        }
+//    }
+
+
+    public static void subArray(int[] Original){
+        for (int i = 0;i<=Original.length-1;i++){
+            for (int j = i;j<= Original.length-1;j++){
+                for (int k = i;k<=j;k++){
+                    System.out.print(Original[k] +" ");
+                }
+                System.out.println();
             }
             System.out.println();
         }
     }
+
     public static void main(String[] args) {
 //        creating Array:
 //        DataType ArrayName[] = new DataType[Size of Array]
@@ -170,10 +199,12 @@ public class Arrays {
 //        ReversedArray(OriginalArray);
 
 //        Pair of an Array:
+//        int[] OriginalArray = {2,4,6,8,10};
+//        pairInArray(OriginalArray);
+
+//SubArrays of An Array:
         int[] OriginalArray = {2,4,6,8,10};
-
-        pairInArray(OriginalArray);
-
+        subArray(OriginalArray);
 
 
 
