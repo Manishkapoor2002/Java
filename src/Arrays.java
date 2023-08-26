@@ -72,30 +72,46 @@ public class Arrays {
 
 //    Reverse an Array:
 
-    public static void ReversedArray(int OrignalArray[]){
-        int ReversedArray[] = new int[(OrignalArray.length)];
-        int count  = 0;
-        for (int i = OrignalArray.length-1;i>=0;i--){
-            ReversedArray[count] = OrignalArray[i];
-            count++;
+//    public static void ReversedArray(int OrignalArray[]){
+//        int ReversedArray[] = new int[(OrignalArray.length)];
+//        int count  = 0;
+//        for (int i = OrignalArray.length-1;i>=0;i--){
+//            ReversedArray[count] = OrignalArray[i];
+//            count++;
+//        }
+////        Print Original Array:
+//        System.out.print("Original Array :");
+//        for (int i = 0;i<= OrignalArray.length-1;i++){
+//            System.out.print(OrignalArray[i] +" ,");
+//
+//        }
+//
+//        System.out.println();
+////        Print Reversed Array:
+//
+//        System.out.print("Reversed Array :");
+//       for (int i = 0;i<= ReversedArray.length-1;i++){
+//           System.out.print(" "+ReversedArray[i] +",");
+//       }
+//
+//    }
+
+    public static void  ReversedArray(int[] OriginalArray){
+        int start = 0,last = OriginalArray.length-1;
+
+        while (start<last){
+            int temp = OriginalArray[last];
+            OriginalArray[last] = OriginalArray[start];
+            OriginalArray[start] = temp;
+            start++;
+            last--;
         }
-//        Print Original Array:
-        System.out.print("Original Array :");
-        for (int i = 0;i<= OrignalArray.length-1;i++){
-            System.out.print(OrignalArray[i] +" ,");
-
+        System.out.println("Reversed Array");
+        for (int i = 0;i<=OriginalArray.length-1;i++){
+            System.out.print(OriginalArray[i] +" ");
         }
-
-        System.out.println();
-//        Print Reversed Array:
-
-        System.out.print("Reversed Array :");
-       for (int i = 0;i<= ReversedArray.length-1;i++){
-           System.out.print(" "+ReversedArray[i] +",");
-       }
-
     }
-    public static void main(String args[]) {
+    public static void main(String[] args) {
 //        creating Array:
 //        DataType ArrayName[] = new DataType[Size of Array]
 //        int numbers[] = new int[5];
@@ -138,9 +154,9 @@ public class Arrays {
 //        int key = 12;
 //        System.out.println("Key found at" +binarySearch(number, key));
 
-        int[] OrignalArray = {0,1,2,3,4,5};
-//        System.out.println(OrignalArray[5]);
-        ReversedArray(OrignalArray);
+        int[] OriginalArray = {0,1,2,3,4,5};
+//        System.out.println(OriginalArray[5]);
+        ReversedArray(OriginalArray);
 
 
 
