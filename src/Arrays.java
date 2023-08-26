@@ -213,11 +213,10 @@ public class Arrays {
     public static void Kadanes(int[] Original){
         int currSum = 0;
         int maxSum = Integer.MIN_VALUE;
-        int maxSumNegitive = Integer.MIN_VALUE;
 
 //        for (int i = 0;i<=Original.length-1;i++){
 //            if(Original[i]<0){
-//                maxSumNegitive = Math.max(Original[i],maxSumNegitive);
+//                maxSumNegative = Math.max(Original[i],maxSumNegative);
 //            }
 //        }
         for (int i = 0;i<=Original.length-1;i++){
@@ -227,7 +226,7 @@ public class Arrays {
             }
             maxSum = Math.max(currSum,maxSum);
         }
-//        int Max = Math.max(maxSum,maxSumNegitive);
+//        int Max = Math.max(maxSum,maxSumNegative);
         System.out.println(maxSum);
 
     }
