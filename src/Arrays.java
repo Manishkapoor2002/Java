@@ -179,37 +179,60 @@ public class Arrays {
 //           System.out.println("Sum of Max SubArray: "+max);
 //    }
 
-    public static void maxSubArraySum(int[] Original){
-        int max = Integer.MIN_VALUE;
-        int currentArraySum = 0;
+//    Optimised Approach to find Max Value and Max SubString Sum of an Array by using Prefix sum approach
 
-        int[] prefix = new int[Original.length];
-        prefix[0] = Original[0];
+//    public static void maxSubArraySum(int[] Original){
+//        int max = Integer.MIN_VALUE;
+//        int currentArraySum = 0;
+//
+//        int[] prefix = new int[Original.length];
+//        prefix[0] = Original[0];
+//
+//        for (int i = 1;i<= prefix.length-1;i++){
+//            prefix[i] = prefix[i-1] + Original[i];
+////            System.out.println(prefix[i]);
+//        }
+//
+//        for (int i = 0;i<=Original.length-1;i++){
+//
+//            for (int j = i;j<= Original.length-1;j++){
+//
+//                currentArraySum = i == 0 ? prefix[j]:prefix[j] - prefix[i-1];
+//
+//                if (max<currentArraySum){
+//                    max = currentArraySum;
+//                }
+////                currentArraySum = 0;
+//            }
+//        }
+//        System.out.println(max);
+//
+//    }
 
-        for (int i = 1;i<= prefix.length-1;i++){
-            prefix[i] = prefix[i-1] + Original[i];
-//            System.out.println(prefix[i]);
-        }
+//    Optimised Approach to find Max Value and Max SubString Sum of an Array by using Kadane's Algorithm
+    public static void Kadanes(int[] Original){
+        int currSum = 0;
+        int maxSum = Integer.MIN_VALUE;
+        int maxSumNegitive = Integer.MIN_VALUE;
 
+//        for (int i = 0;i<=Original.length-1;i++){
+//            if(Original[i]<0){
+//                maxSumNegitive = Math.max(Original[i],maxSumNegitive);
+//            }
+//        }
         for (int i = 0;i<=Original.length-1;i++){
-
-            for (int j = i;j<= Original.length-1;j++){
-
-                currentArraySum = i == 0 ? prefix[j]:prefix[j] - prefix[i-1];
-
-                if (max<currentArraySum){
-                    max = currentArraySum;
-                }
-//                currentArraySum = 0;
+            currSum += Original[i];
+            if (currSum<0){
+                currSum = 0;
             }
+            maxSum = Math.max(currSum,maxSum);
         }
-        System.out.println(max);
+//        int Max = Math.max(maxSum,maxSumNegitive);
+        System.out.println(maxSum);
 
     }
 
 
-
-//    Optimised Approach to find Max Value and Max SubString Sum of an Array by using Prefix sum approach
 
 
     public static void main(String[] args) {
@@ -268,8 +291,8 @@ public class Arrays {
 //        subArray(OriginalArray);
 
 // Max-SubArrays Sum:
-        int[] OriginalArray = {1,2,-5,9,8,-6};
-        maxSubArraySum(OriginalArray);
+        int[] OriginalArray = {1,2,-5,9,-2,8,-6};
+        Kadanes(OriginalArray);
 
     }
 }
