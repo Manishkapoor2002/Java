@@ -210,27 +210,49 @@ public class Arrays {
 //    }
 
 //    Optimised Approach to find Max Value and Max SubString Sum of an Array by using Kadane's Algorithm
-    public static void Kadanes(int[] Original){
-        int currSum = 0;
-        int maxSum = Integer.MIN_VALUE;
-
+//    public static void Kadanes(int[] Original){
+//        int currSum = 0;
+//        int maxSum = Integer.MIN_VALUE;
+//
+////        for (int i = 0;i<=Original.length-1;i++){
+////            if(Original[i]<0){
+////                maxSumNegative = Math.max(Original[i],maxSumNegative);
+////            }
+////        }
 //        for (int i = 0;i<=Original.length-1;i++){
-//            if(Original[i]<0){
-//                maxSumNegative = Math.max(Original[i],maxSumNegative);
+//            currSum += Original[i];
+//            if (currSum<0){
+//                currSum = 0;
 //            }
+//            maxSum = Math.max(currSum,maxSum);
 //        }
-        for (int i = 0;i<=Original.length-1;i++){
-            currSum += Original[i];
-            if (currSum<0){
-                currSum = 0;
-            }
-            maxSum = Math.max(currSum,maxSum);
+////        int Max = Math.max(maxSum,maxSumNegative);
+//        System.out.println(maxSum);
+//
+//    }
+
+//    Printing Building Blocks
+    public static void printingBuildingBLocks(int[] Array){
+        int max = Integer.MIN_VALUE;
+        for (int i = 0;i<= Array.length-1;i++){
+            max = Math.max(max,Array[i]);
         }
-//        int Max = Math.max(maxSum,maxSumNegative);
-        System.out.println(maxSum);
+//        System.out.println(max);
+
+        while(max>=1){
+            for (int j = 0;j<= Array.length-1;j++){
+                if (Array[j]>=max){
+                    System.out.print("*");
+                }else{
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+            max--;
+
+        }
 
     }
-
 
 
 
@@ -290,8 +312,11 @@ public class Arrays {
 //        subArray(OriginalArray);
 
 // Max-SubArrays Sum:
-        int[] OriginalArray = {1,2,-5,9,-2,8,-6};
-        Kadanes(OriginalArray);
+//        int[] OriginalArray = {1,2,-5,9,-2,8,-6};
+//        Kadanes(OriginalArray);
 
+//        Printing Building blocks
+    int[] Array = {4,2,0,6,3,2,5};
+    printingBuildingBLocks(Array);
     }
 }
