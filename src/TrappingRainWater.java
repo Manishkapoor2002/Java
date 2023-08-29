@@ -13,6 +13,7 @@ public class TrappingRainWater {
             return;
         }
 
+//Building are in Ascending order or not
         int flag = 0;
 
         for (int i = Array.length;i>1;i--){
@@ -24,7 +25,7 @@ public class TrappingRainWater {
             }
         }
 
-
+//Building are in Descending order or not
         int flagRev = 0;
 
         for (int i = Array.length;i>=1;i--){
@@ -43,7 +44,7 @@ public class TrappingRainWater {
             System.out.println("Welcome to the problem!!");
 
             for (int i = 0;i<= Array.length-1;i++){
-                if (Array[i]== Array[0] || Array[i] == Array[Array.length-1]){
+                if (i == 0 || i == Array.length-1){
                     trapwater += 0;
                     B[i] = 0;
                 }else{
