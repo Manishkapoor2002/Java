@@ -34,21 +34,47 @@ public class Introduction {
 //        }
 
 //        Compression operator for string
-        String s1 = "Manish";
-        String s3 = new String("Manish");
+//        String s1 = "Manish";
+//        String s3 = new String("Manish");
 
 
 //        by using compression operator
-        if (s1.equals(s3)){
-            System.out.println("True");
-        }else{
-            System.out.println("False");
+//        if (s1.equals(s3)){
+//            System.out.println("True");
+//        }else{
+//            System.out.println("False");
+//        }
+////        by using ==
+//        if (s1 == s3){
+//            System.out.println("True");
+//        }else{
+//            System.out.println("False");
+//        }
+
+
+//        SubString :
+        String str = "Manishkapoor";
+        System.out.println(str.substring(0,6));
+
+        String subStr = "";
+        for(int i = 0;i<6;i++){
+            subStr += str.charAt(i);
         }
-//        by using ==
-        if (s1 == s3){
-            System.out.println("True");
-        }else{
-            System.out.println("False");
+        System.out.println(subStr);
+
+//        Largest String: Lexicographically(character by character)
+
+        String[] s = {"apple","banana","orange","mango"};
+
+        String largest = s[0];
+        for (int i =1;i<s.length;i++){
+            if(largest.compareToIgnoreCase(s[i])<1){
+                largest = s[i];
+            }
         }
+
+        System.out.println(largest);
+
+
     }
 }
